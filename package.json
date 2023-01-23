@@ -1,0 +1,23 @@
+{
+  "name": "week-06-devtools_debugging_and_unit_tests",
+  "version": "1.0.0",
+  "description": "war game",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FatGuyClaire/Week06-WarGame.git"
+  },
+  "keywords": [
+    "war",
+    "game"
+  ],
+  "author": "Claire Green",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FatGuyClaire/Week06-WarGame/issues"
+  },
+  "homepage": "https://github.com/FatGuyClaire/Week06-WarGame#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
