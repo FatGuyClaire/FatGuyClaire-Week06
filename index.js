@@ -1,3 +1,4 @@
+// I built list of the 4 suits.
 const suitEnum = Object.freeze({
   hearts: "♥",
   clubs: "♣",
@@ -5,6 +6,7 @@ const suitEnum = Object.freeze({
   spades: "♠",
 });
 
+// I built a list of the 13 ranks. 
 const rankEnum = Object.freeze({
   2: 2,
   3: 3,
@@ -21,12 +23,16 @@ const rankEnum = Object.freeze({
   Ace: 14,
 });
 
+// I built the Card class with a constructor to pair suit and rank to enable the creation of cards for the deck.
 class Card {
   constructor(suit, rank) {
     this.suit = suit;
     this.rank = rank;
   }
 }
+
+// I built the Holds Cards class with methods to shuffle, deal, and receive a card, as well as a method to 
+// determine if there are cards remaining. 
 
 class HoldsCards {
   list = [];
@@ -53,6 +59,7 @@ class HoldsCards {
   }
 }
 
+// I created the Deck class (that extend Holds Cards) with a constructor to create every card in the deck.
 class Deck extends HoldsCards {
   constructor() {
     super();
@@ -64,6 +71,7 @@ class Deck extends HoldsCards {
   }
 }
 
+// I created the Player class (that extends Holds Cards) with a method to score points.
 class Player extends HoldsCards {
   score = 0;
   scorePoint() {
@@ -71,6 +79,9 @@ class Player extends HoldsCards {
   }
 }
 
+// I created the War Game class with a constructor to create 2 players. The class calls for the creation of a deck,
+// the shuffling of the deck, the distribution of the cards to each player, the running of the game, and the scoring
+// of points. 
 class WarGame {
   constructor() {
     this.player1 = new Player();
@@ -92,6 +103,7 @@ class WarGame {
       } else this.player2.scorePoint();
     }
   }
+  // I created a method to return the score for each player and to declare the winner. 
   toString() {
     let result = `Player 1 score ${this.player1.score}. Player 2 score ${this.player2.score}.`;
     if (this.player1.score === this.player2.score) {
@@ -103,5 +115,6 @@ class WarGame {
   }
 }
 
+// I created a method to call the game and print the results.
 const game = new WarGame();
 console.log(game.toString());
